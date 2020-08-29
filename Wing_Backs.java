@@ -1,0 +1,32 @@
+public class Wing_Backs extends Player{
+    private int Interceptions=0;
+    private boolean yellowCard=false;
+    public Wing_Backs(String name,int number,int x,int y,String Omada){
+        super(name,number,x,y,Omada);
+    }
+    public void specialMove(Ball ball,Player p){
+         String tempTeam = getOmada();
+    if((tempTeam!=p.getOmada() && ball.getCurrentPlayer()==p) && ((p.getX()-ball.getX() >= -1 || p.getX()<= 1) && (p.getY()-ball.getY() >= -1 || p.getY()<= 1) )){
+            int random = (int )(Math.random() * 100 + 1);
+            if(random<=90){
+                Interceptions++;
+               ball.ChangePossession(p);
+            }
+            else{
+                int random2 = (int )(Math.random() * 100 + 1);
+                if(random2<=10){
+                    if(yellowCard!=true){
+                        yellowCard = true;
+                        
+                    }
+                    else{
+                        p = null;
+                    }
+                }
+                    
+                }
+            }
+                
+            
+    }  
+    }
